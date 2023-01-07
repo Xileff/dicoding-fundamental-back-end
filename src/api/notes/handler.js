@@ -1,6 +1,5 @@
 const ClientError = require('../../exceptions/ClientError');
-
-// Request handling
+// Request handling -> Validasi data, lalu panggil service
 class NotesHandler {
   constructor(service, validator) {
     this._service = service;

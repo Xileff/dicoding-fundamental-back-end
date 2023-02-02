@@ -56,14 +56,18 @@ class NotesHandler {
   }
 
   async getNotesHandler(request) {
-    const { id: credentialId } = request.auth.credentials;
-    const notes = await this._service.getNotes(credentialId);
-    return {
-      status: 'success',
-      data: {
-        notes,
-      },
-    };
+    try {
+      const { id: credentialId } = request.auth.credentials;
+      const notes = await this._service.getNotes(credentialId);
+      return {
+        status: 'success',
+        data: {
+          notes,
+        },
+      };
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   async getNoteByIdHandler(request, h) {

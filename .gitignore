@@ -1,4 +1,5 @@
 node_modules/
 notes-api-web-server.pem
+src/api/uploads/file
 .env
 .prod.env
